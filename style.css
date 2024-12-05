@@ -1,0 +1,125 @@
+@charset "UTF-08";
+
+/* 
+*
+*/
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Times New Roman', Times, serif;
+
+}
+
+
+body,
+main {
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    background-color: #696969a1;
+    display: flex;
+    flex-direction: column;
+    min-width: 100vh;
+    align-items: center;
+    justify-content: center;
+
+}
+
+h1 {
+    font-size: 1.9em;
+    color: #f5efea;
+
+}
+
+canvas {
+    background-color: #000000e6;
+    align-items: center;
+    border: 5px solid #8B0000;
+}
+
+.score {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 1.8rem;
+    color: #f5efea;
+
+}
+
+.score--value {
+    font-weight: 700;
+    font-size: 4.5rem;
+    display: block;
+    margin-top: -10px;
+}
+
+.menu-screen {
+    position: absolute;
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    z-index: 1;
+}
+
+.game-over {
+    text-transform: uppercase;
+    font-weight: 700;
+    font-size: 3rem;
+    color: #f5efea;
+}
+
+.final-score {
+    font-size: 1.5rem;
+    font-weight: 500;
+    color: #f5efea;
+}
+
+.btn-play {
+    border: none;
+    border-radius: 100px;
+    padding: 10px 15px 10px 12px;
+    font-size: 1rem;
+    font-weight: 600;
+    color: #333;
+    margin-top: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    cursor: pointer;
+}
+
+footer {
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    background-color: #696969a1;
+    color: #f5efea;
+    min-width: 100vh;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+
+}
+/* Estilo para o botão de pausa */
+.btn-pause {
+    display: inline-flex;
+    align-items: center;
+    padding: 10px;
+    font-size: 1em;
+    cursor: pointer;
+    background-color: #ff6347; /* Escolha uma cor */
+    border: none;
+    color: #fff;
+    border-radius: 5px;
+    margin-top: 10px;
+  }
+  
+  .btn-pause span {
+    margin-right: 5px;
+  }
+  
+
+/*
+*
+*/
