@@ -1,49 +1,50 @@
-@charset "UTF-08";
+/* Definir o charset corretamente */
+@charset "UTF-8";
 
-/* 
-*
-*/
-
+/* Resetando as margens e preenchimentos */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Times New Roman', Times, serif;
-
+    font-family: 'Press Start 2P', cursive; /* Fonte que lembra jogos antigos */
 }
 
-
+/* Estilo do corpo e do main */
 body,
 main {
     font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-    background-color: #696969a1;
+    background-color: #1b1b1b; /* Cor de fundo escura para destacar os elementos */
     display: flex;
     flex-direction: column;
-    min-width: 100vh;
+    min-height: 100vh;
     align-items: center;
     justify-content: center;
-
+    color: #fff; /* Texto em branco */
 }
 
+/* Estilo do título */
 h1 {
-    font-size: 1.9em;
-    color: #f5efea;
-
+    font-size: 2.5em;
+    color: #ffcc00; /* Amarelo vibrante para chamar atenção */
+    text-shadow: 0px 0px 10px #ffcc00, 0px 0px 20px #ffcc00, 0px 0px 30px #ffcc00; /* Efeito de brilho */
 }
 
+/* Estilo do canvas */
 canvas {
-    background-color: #000000e6;
+    background-color: #222; /* Cor de fundo escura para o canvas */
     align-items: center;
-    border: 5px solid #8B0000;
+    border: 5px solid #00ff00; /* Borda neon verde */
+    box-shadow: 0px 0px 20px #00ff00; /* Efeito de glow verde */
 }
 
+/* Estilo do score */
 .score {
     display: flex;
     flex-direction: column;
     align-items: center;
     font-size: 1.8rem;
-    color: #f5efea;
-
+    color: #ffcc00; /* Cor do texto em amarelo */
+    text-shadow: 0px 0px 5px #ffcc00; /* Efeito de brilho suave */
 }
 
 .score--value {
@@ -53,6 +54,7 @@ canvas {
     margin-top: -10px;
 }
 
+/* Estilo da tela de Game Over */
 .menu-screen {
     position: absolute;
     display: none;
@@ -65,61 +67,85 @@ canvas {
     text-transform: uppercase;
     font-weight: 700;
     font-size: 3rem;
-    color: #f5efea;
+    color: #ff6347; /* Cor laranja vibrante para destaque */
+    text-shadow: 0px 0px 10px #ff6347, 0px 0px 20px #ff6347; /* Efeito de brilho */
 }
 
 .final-score {
     font-size: 1.5rem;
     font-weight: 500;
     color: #f5efea;
+    text-shadow: 0px 0px 5px #f5efea; /* Efeito de brilho suave */
 }
 
+/* Estilo do botão de play */
 .btn-play {
     border: none;
     border-radius: 100px;
-    padding: 10px 15px 10px 12px;
-    font-size: 1rem;
+    padding: 15px 25px;
+    font-size: 1.5rem;
     font-weight: 600;
-    color: #333;
-    margin-top: 40px;
+    color: #fff;
+    background-color: #ff6347; /* Cor vibrante para o botão */
+    margin-top: 20px;
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 5px;
+    gap: 10px;
     cursor: pointer;
+    text-shadow: 0px 0px 10px #ff6347;
+    box-shadow: 0px 0px 20px #ff6347; /* Efeito de glow */
+    transition: all 0.3s ease-in-out;
 }
 
-footer {
-    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-    background-color: #696969a1;
-    color: #f5efea;
-    min-width: 100vh;
-    align-items: center;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-
-
+.btn-play:hover {
+    background-color: #ff4500; /* Cor de fundo do botão ao passar o mouse */
+    transform: scale(1.1); /* Aumenta o tamanho ao passar o mouse */
 }
-/* Estilo para o botão de pausa */
+
+/* Estilo do botão de pausa */
 .btn-pause {
     display: inline-flex;
     align-items: center;
-    padding: 10px;
-    font-size: 1em;
+    padding: 15px 20px;
+    font-size: 1.2em;
     cursor: pointer;
-    background-color: #ff6347; /* Escolha uma cor */
+    background-color: #00ff00; /* Cor neon verde para o botão */
     border: none;
     color: #fff;
     border-radius: 5px;
-    margin-top: 10px;
-  }
-  
-  .btn-pause span {
-    margin-right: 5px;
-  }
-  
+    margin-top: 15px;
+    text-shadow: 0px 0px 10px #00ff00;
+    box-shadow: 0px 0px 20px #00ff00; /* Efeito de glow verde */
+    transition: all 0.3s ease-in-out;
+}
 
-/*
-*
-*/
+.btn-pause:hover {
+    background-color: #00cc00; /* Cor de fundo ao passar o mouse */
+    transform: scale(1.1); /* Aumenta o tamanho ao passar o mouse */
+}
+
+/* Rodapé */
+footer {
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    background-color: #1b1b1b;
+    color: #f5efea;
+    min-height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    position: fixed;
+    bottom: 0;
+}
+
+/* Efeito de brilho na tela */
+@keyframes glowing {
+    0% { text-shadow: 0 0 5px #ff6347, 0 0 10px #ff6347, 0 0 15px #ff6347, 0 0 20px #ff6347; }
+    50% { text-shadow: 0 0 10px #ff6347, 0 0 20px #ff6347, 0 0 30px #ff6347, 0 0 40px #ff6347; }
+    100% { text-shadow: 0 0 5px #ff6347, 0 0 10px #ff6347, 0 0 15px #ff6347, 0 0 20px #ff6347; }
+}
+
+h1, .score, .game-over {
+    animation: glowing 1.5s infinite alternate;
+}

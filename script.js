@@ -27,14 +27,12 @@ const randomPosition = () => {
   const number = randomNumber(0, canvas.width - size);
   return Math.round(number / 30) * 30;
 };
-
 const randomColor = () => {
-  const red = randomNumber(0, 255);
-  const green = randomNumber(0, 255);
-  const blue = randomNumber(0, 255);
-
-  return `rgb(${red}, ${green}, ${blue})`;
-};
+  // Garantir que a comida tenha sempre cores brilhantes
+  const colors = ['#FF6347', '#32CD32', '#FFD700', '#FF1493', '#00FFFF']; // Exemplo de paleta de cores vibrantes
+  const randomIndex = Math.floor(Math.random() * colors.length);
+  return colors[randomIndex];
+}
 
 // Criando a const para a Apple
 const food = {
@@ -55,17 +53,18 @@ const drawFood = () => {
 };
 
 const drawSnake = () => {
-  ctx.fillStyle = "#66CDAA";
+  // Alterando a cor do corpo da cobra
+  ctx.fillStyle = "#00FF00"; // Cor verde neon
 
   snake.forEach((position, index) => {
+    // Alterando a cor da cabeça
     if (index == snake.length - 1) {
-      ctx.fillStyle = "#FFA500";
+      ctx.fillStyle = "#FF0000"; // Cor vermelha para a cabeça
     }
 
     ctx.fillRect(position.x, position.y, size, size);
   });
-};
-
+}
 const moveSnake = () => {
   if (!direction) return;
 
